@@ -361,9 +361,9 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
               <div className="grid gap-10 lg:grid-cols-2">
                 {/* first section  */}
                 <Branding
-                  image="auth-img"
-                  title="To Build Your Solana Creator"
-                  message="Try and Create your first ever solana project, and if you want to master blockchain development then check the course"
+                // imageUrl="auth-img"
+                // title="To Build Your Solana Creator"
+                // message="Try and Create your first ever solana project, and if you want to master blockchain development then check the course"
                 />
 
                 {/* second section  */}

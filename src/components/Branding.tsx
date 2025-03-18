@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 
-const Branding: FC = ({ image, title, message }) => {
+const Branding: FC = ({}) => {
   return (
     <div className="hidden py-4 ps-4 lg:block">
       <div className="relative w-full h-full overflow-hidden rounded-xl">
         <img
-          src={`assets/images/ai/${image}.jpg`}
+          src={`assets/images/ai/auth-img.jpg`}
+          // src={`assets/images/ai/${imageUrl}`}
           alt="banner image"
           className="w-full h-full transform -scale-x-100"
         />
@@ -15,10 +16,13 @@ const Branding: FC = ({ image, title, message }) => {
             <div className="p-6 text-start ">
               <h5 className="mb-3 text-xl font-bold text-white">
                 Solana Token Creator <br />
-                {title}
+                To Build Your Solana Creator
+                {/* {title} */}
               </h5>
               <p className="text-base font-medium text-default-400">
-                {message}
+                Try and Create your first ever solana project, and if you want
+                to master blockchain development then check the course
+                {/* {message} */}
               </p>
             </div>
           </div>
