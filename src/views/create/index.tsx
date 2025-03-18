@@ -50,6 +50,7 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
     image: "",
     description: "",
   });
+  console.log("🐱‍👤✨ ~ token:", token);
 
   const handleFormFieldChange = (fieldName, e) => {
     setToken({
@@ -165,6 +166,7 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
 
     if (file) {
       const imgUrl = await uploadImagePinata(file);
+      console.log("🐱‍👤✨ ~ handleImageChange ~ imgUrl:", imgUrl);
       setToken({
         ...token,
         image: imgUrl,
@@ -174,6 +176,7 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
 
   // function to upload image
   const uploadImagePinata = async (file) => {
+    console.log("🐱‍👤✨ ~ uploadImagePinata ~ file:", file);
     if (file) {
       // setIsLoading(true);
       try {
@@ -182,21 +185,21 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
 
         const response = await axios({
           method: "POST",
-          url: "http://api.pinata.cloud/pinning/pinFileToIPFS",
+          url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key: "97176e8ca270ceb27c8b",
+            pinata_api_key: "17e532d1d209b209f540",
             pinata_secret_api_key:
-              "489d97d367cc2c21eed2947985d1d71c0b2217f9b142970b7e8a1880f3e44875",
+              "fb4af1b7cf69f8d79273e9f70e918fe1a5f7c99ec14e12ebe59df1526fc93804",
             "Content-Type": "multipart/form-data",
-            // Authorization: `Bearer ${process.env.REACT_APP_PINATA_API_KEY}`,
           },
         });
 
         const ImgHash = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
+        console.log("🐱‍👤✨ ~ uploadImagePinata ~ response:", response);
         return ImgHash;
       } catch (error) {
-        console.log(error);
+        console.log("🐱‍👤✨ ~ uploadImagePinata ~ error:", error);
         notify({ type: "error", message: "Image Upload Error" });
       }
 
@@ -223,12 +226,12 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://api.pinata.cloud/pinning/pinJSONToIPFS",
+        url: "https://api.pinata.cloud/pinning/pinJSONToIPFS",
         data: data,
         headers: {
-          pinata_api_key: "97176e8ca270ceb27c8b",
+          pinata_api_key: "17e532d1d209b209f540",
           pinata_secret_api_key:
-            "489d97d367cc2c21eed2947985d1d71c0b2217f9b142970b7e8a1880f3e44875",
+            "fb4af1b7cf69f8d79273e9f70e918fe1a5f7c99ec14e12ebe59df1526fc93804",
           "Content-Type": "application/json",
           // Authorization: `Bearer ${process.env.REACT_APP_PINATA_API_KEY}`,
         },
@@ -237,6 +240,7 @@ export const CreateView: FC = ({ setOpenCreateModel }) => {
       const url = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`;
       return url;
     } catch (error: any) {
+      console.log("🐱‍👤✨ ~ uploadMetadata ~ error:", error);
       notify({ type: "error", message: "Pinata Upload JSON Error" });
     }
 
