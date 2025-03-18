@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
 import {
   CheckCircleIcon,
   InformationCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/outline";
 import { XIcon } from "@heroicons/react/solid";
-import useNotificationStore from "../stores/useNotificationStore";
 import { useConnection } from "@solana/wallet-adapter-react";
-import { useNetworkConfiguration } from "../contexts/AutoConnectProvider";
+import { useEffect } from "react";
+import { useNetworkConfiguration } from "../contexts/NetworkConfigurationProvider";
+import useNotificationStore from "../stores/useNotificationStore";
 
 //* internal imports
-import NotificationSVG from "./SVG/NotificationSVG";
 import { clearInterval } from "timers";
+import NotificationSVG from "./SVG/NotificationSVG";
 
 const NotificationList = () => {
   const { notifications, set: setNotificationStore } = useNotificationStore(

@@ -56,31 +56,31 @@ const Home: NextPage = (props) => {
       <FaqView />
 
       {/* dynamic components */}
-      {/* {openCreateModel && (
+      {openCreateModel && (
         <div className="relative h-full new_loader bg-slate-900">
           <CreateView setOpenCreateModel={setOpenCreateModel} />
         </div>
       )}
 
-      {openTokenMetaData && (
+      {/* {openTokenMetaData && (
         <div className="relative h-full new_loader bg-slate-900">
           <TokenMetaData setOpenTokenMetaData={setOpenTokenMetaData} />
         </div>
-      )}
+      )} */}
 
-      {openContact && (
+      {/* {openContact && (
         <div className="relative h-full new_loader bg-slate-900">
           <ContactView setOpenContact={setOpenContact} />
         </div>
-      )}
+      )} */}
 
-      {openAirdrop && (
+      {/* {openAirdrop && (
         <div className="relative h-full new_loader bg-slate-900">
           <AirDropView setOpenAirdrop={setOpenAirdrop} />
         </div>
-      )}
+      )} */}
 
-      {openSendTransaction && (
+      {/* {openSendTransaction && (
         <div className="relative h-full new_loader bg-slate-900">
           <DonateView setOpenSendTransaction={setOpenSendTransaction} />
         </div>

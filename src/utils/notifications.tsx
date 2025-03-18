@@ -1,7 +1,7 @@
 import useNotificationStore from "../stores/useNotificationStore";
 
 export function notify(newNotification: {
-  tye?: string;
+  type?: string;
   message?: string;
   description?: string;
   txid?: string;
