@@ -14,11 +14,11 @@ import { clearInterval } from "timers";
 import NotificationSVG from "./SVG/NotificationSVG";
 
 const NotificationList = () => {
-  const { notifications, set: setNotificationStore } = useNotificationStore(
+  const { notification, set: setNotificationStore } = useNotificationStore(
     (s) => s
   );
 
-  const reversedNotifications = [...notifications].reverse();
+  const reversedNotifications = [...notification].reverse();
   return (
     <div
       className={`pointer-events-none fixed inset-0 z-20 flex items-end px-4  py-6 sm:p-6`}
@@ -35,8 +35,8 @@ const NotificationList = () => {
               setNotificationStore((state: any) => {
                 const reversedIndex = reversedNotifications.length - 1 - idx;
                 state.notifications = [
-                  ...notifications.slice(0, reversedIndex),
-                  ...notifications.slice(reversedIndex + 1),
+                  ...notification.slice(0, reversedIndex),
+                  ...notification.slice(reversedIndex + 1),
                 ];
               });
             }}

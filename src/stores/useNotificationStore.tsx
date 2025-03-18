@@ -12,7 +12,7 @@ interface NotificationStore extends State {
 }
 
 const useNotificationStore = create<NotificationStore>((set, _get) => ({
-  notifications: [],
+  notification: [],
   set: (fn) => set(produce(fn)),
 }));
 

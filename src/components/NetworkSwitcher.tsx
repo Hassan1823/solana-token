@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 
 // internal imports
 import { useNetworkConfiguration } from "../contexts/NetworkConfigurationProvider";
-import NetworkSwitcher from "./SVG/NetworkSwitcherSVG";
+// import NetworkSwitcher from "./SVG/NetworkSwitcherSVG";
+import NetworkSwitcherSVG from "../components/SVG/NetworkSwitcherSVG";
 
 const NetworkSwitcher: FC = () => {
   const { networkConfiguration, setNetworkConfiguration } =
